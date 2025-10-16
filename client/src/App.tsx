@@ -261,6 +261,7 @@ function App() {
                     ✅ Correct: {right.length} | ❌ Wrong: {wrong.length}
                   </p>
                   <div className="mark">
+                    <p>{isfeedBack&&"Wait for feedback"}</p>
                     <Markdown >{feedBack}</Markdown>
 
                   </div>
