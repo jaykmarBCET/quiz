@@ -49,7 +49,7 @@ export const useQuizStore = create<QuizStoreInfo>((set)=>({
     createQuestion:async(data)=>{
         try {
             set({isLoading:true})
-            const response = await axios.post("http://localhost:3000",data)
+            const response = await axios.post("https://jx9yx4-3000.csb.app",data)
             if(response.status>300){
                 console.log(response.data)
                 return
@@ -64,7 +64,7 @@ export const useQuizStore = create<QuizStoreInfo>((set)=>({
     },
     getFeedBack:async(data)=>{
         try {
-            const response = await axios.post("http://localhost:3000/feedback",data)
+            const response = await axios.post("https://jx9yx4-3000.csb.app/feedback",data)
             if(response.status>300)return;
             
             set({feedBack:response.data.result})
