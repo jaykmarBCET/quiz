@@ -1,0 +1,10 @@
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "level":"Hard",
+  "type":"Competition exam ",
+  "count":"20",
+  "examName":"TCS NQT",
+  "description":"include all topic like time , work , distance, boat stream, tain,coding-decoding, syliums,statment conclusion etc"
+}
