@@ -102,10 +102,10 @@ function App() {
       setIsFeedback(true)
       if (right.length == 0 && wrong.length == 0) return;
       await getFeedBack({ right, wrong })
-      
+
     } catch (error) {
       console.log(error)
-    }finally{
+    } finally {
       setIsFeedback(false)
     }
 
@@ -251,7 +251,7 @@ function App() {
                   question={quiz[currentIndex]}
                   selected={selected}
                 />
-                
+
               </motion.div>
             ) : (
               <>
@@ -261,24 +261,27 @@ function App() {
                     ✅ Correct: {right.length} | ❌ Wrong: {wrong.length}
                   </p>
                   <div className="mark">
-                    <p>{isfeedBack&&"Wait for feedback"}</p>
+                    <p className="text-green-500 px-2 py-2">{isfeedBack && "Wait for feedback"}</p>
+
+
                     <Markdown >{feedBack}</Markdown>
+
 
                   </div>
                   <div className="flex gap-4 justify-center items-center">
 
-                  <button className="bg-green-500 px-2 py-1 rounded cursor-pointer" onClick={() => {
+                    <button className="bg-green-500 px-2 py-1 rounded cursor-pointer" onClick={() => {
 
-                    if (feedBack.length <= 0) {
-                      handelFeedBack()
-                    }
+                      if (feedBack.length <= 0) {
+                        handelFeedBack()
+                      }
 
-                  }}>FeedBack</button>
-                  <button onClick={()=>{
-                    clearQuiz()
-                    clearFeedBack()
+                    }}>FeedBack</button>
+                    <button onClick={() => {
+                      clearQuiz()
+                      clearFeedBack()
 
-                  }} className="bg-green-500 px-2 py-1 rounded cursor-pointer">Try Again</button>
+                    }} className="bg-green-500 px-2 py-1 rounded cursor-pointer">Try Again</button>
                   </div>
                 </div>
               </>
