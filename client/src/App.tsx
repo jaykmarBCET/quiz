@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { ClockLoader } from "react-spinners";
 import Markdown from "react-markdown";
 import "./assets/mark.css"
+import { examNames } from "./constants/constants";
 
 function App() {
   const { quiz, createQuestion, isLoading, feedBack, getFeedBack, clearQuiz, clearFeedBack } = useQuizStore();
@@ -111,12 +112,8 @@ function App() {
 
   }
 
-  const examNames = [
-    "TCS NQT", "Wipro Elite NTH", "Infosys InfyTQ", "Cognizant GenC", "Accenture ASE",
-    "Tech Mahindra", "Capgemini", "Mindtree", "HCL TechBee", "IBM CodeKnack",
-    "Amazon WOW", "Google Kickstart", "CodeVita", "Flipkart GRiD", "L&T Infotech",
-    "Deloitte", "Virtusa", "Tata Elxsi", "Zensar", "DXC Technology",
-  ];
+  
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-blue-50 to-purple-100 p-6 flex justify-center items-center">
